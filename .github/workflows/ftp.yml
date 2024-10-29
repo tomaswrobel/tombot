@@ -1,8 +1,5 @@
 name: 🚀 Deploy Discord Bot
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 jobs:
   web-deploy:
@@ -33,7 +30,7 @@ jobs:
       env:
         METHOD: sftp
         FTP_PASSWORD: ${{secrets.PASSWORD}}
-        FTP_SERVER: v-buf-29.sparkedhost.us
+        FTP_SERVER: v-par-08.sparkedhost.us
         FTP_USERNAME: ${{secrets.USERNAME}}
         LOCAL_DIR: dist
         PORT: 2022

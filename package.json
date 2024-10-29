@@ -1,14 +1,14 @@
 {
-	"name": "tomobot",
-	"version": "2.6.2",
-	"description": "Tomobot is a multi-purpose Discord bot.",
+	"name": "tombot",
+	"version": "3.0.0",
+	"description": "Tombot is a multi-purpose Discord bot.",
 	"main": "index.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/tomas-wrobel/tomobot"
+		"url": "https://github.com/tomas-wrobel/tombot"
 	},
 	"author": {
-		"email": "coder@tomaswrobel.dev",
+		"email": "mail@tomaswrobel.dev",
 		"name": "Tomáš Wróbel",
 		"url": "https://tomaswrobel.dev"
 	},
