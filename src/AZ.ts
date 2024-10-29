@@ -68,7 +68,7 @@ class AZ {
 			const half1 = options.slice(0, Math.floor(options.length / 2));
 			const half2 = options.slice(Math.floor(options.length / 2));
 
-			return await this.interaction.editReply({
+			return this.interaction.editReply({
 				content: "",
 				files: [new AttachmentBuilder(buffer, {name: "az.png"})],
 				components: [
@@ -94,13 +94,13 @@ class AZ {
 			const orange = this.items.filter(item => item.color === "orange").length;
 			const blue = this.items.filter(item => item.color === "blue").length;
 
-			return await this.interaction.editReply({
+			return this.interaction.editReply({
 				content: orange > blue ? `<@${this.players[0].id}> has won.` : (orange === blue) ? "Draw" : `<@${this.players[1].id}> has won`,
 				files: [new AttachmentBuilder(buffer, {name: "az.png"})],
 				components: [],
 			});
 		} else {
-			return await this.interaction.editReply({
+			return this.interaction.editReply({
 				content: "",
 				files: [new AttachmentBuilder(buffer, {name: "az.png"})],
 				components: [
