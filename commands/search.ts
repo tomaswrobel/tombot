@@ -1,6 +1,6 @@
 import {ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuInteraction} from "discord.js";
 import youtube, {Video} from "youtube-sr";
-import SlashCommand from "../src/SlashCommand.js";
+import SlashCommand from "../src/slash-command.js";
 import play from "./play.js";
 
 export default new SlashCommand(

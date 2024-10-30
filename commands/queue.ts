@@ -6,8 +6,8 @@ import {
 	PermissionsBitField,
 	RepliableInteraction,
 } from "discord.js";
-import {Song} from "../src/Song.js";
-import SlashCommand from "../src/SlashCommand.js";
+import {Song} from "../src/song.js";
+import SlashCommand from "../src/slash-command.js";
 
 function generateQueueEmbed(interaction: RepliableInteraction, songs: Song[]) {
 	const embeds: EmbedBuilder[] = [];

@@ -4,8 +4,8 @@ import {
 	StringSelectMenuBuilder,
 	StringSelectMenuOptionBuilder,
 } from "discord.js";
-import SlashCommand from "../src/SlashCommand.js";
-import Database from "../src/Database.js";
+import SlashCommand from "../src/slash-command.js";
+import Database from "../src/database.js";
 
 export default new SlashCommand(
 	{
@@ -49,7 +49,7 @@ export default new SlashCommand(
 			});
 
 			if (interaction.values[0] === quiz.correctAnswer) {
-				await interaction.reply(`✅ **Correct!** - ${quiz.correctAnswer} Got 5 points`);
+				await interaction.reply(`✅ **Correct!** - ${quiz.correctAnswer}. Got 5 points`);
 				const database = new Database(this.guild!.id);
 				await database.createTable();
 				await database.add(this.user.id, 5);

@@ -22,7 +22,7 @@ import {
 	TextChannel,
 } from "discord.js";
 import {promisify} from "node:util";
-import {Song} from "./Song";
+import {Song} from "./song.js";
 
 const wait = promisify(setTimeout);
 

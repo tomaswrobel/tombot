@@ -1,9 +1,9 @@
 import {DiscordGatewayAdapterCreator, joinVoiceChannel} from "@discordjs/voice";
 import {PermissionsBitField, TextChannel} from "discord.js";
-import MusicQueue from "../src/MusicQueue.js";
-import {Song} from "../src/Song.js";
-import SlashCommand from "../src/SlashCommand.js";
-import playlist from "./playlist";
+import MusicQueue from "../src/music-queue.js";
+import {Song} from "../src/song.js";
+import SlashCommand from "../src/slash-command.js";
+import playlist from "./playlist.js";
 
 const playlistPattern = /^.*(list=)([^#\&\?]*).*/;
 

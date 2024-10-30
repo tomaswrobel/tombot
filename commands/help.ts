@@ -1,5 +1,5 @@
 import {EmbedBuilder} from "discord.js";
-import SlashCommand from "../src/SlashCommand.js";
+import SlashCommand from "../src/slash-command.js";
 
 export default new SlashCommand(
 	{

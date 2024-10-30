@@ -1,5 +1,5 @@
-import Database from "../src/Database.js";
-import SlashCommand from "../src/SlashCommand.js";
+import Database from "../src/database.js";
+import SlashCommand from "../src/slash-command.js";
 
 export default new SlashCommand(
 	{

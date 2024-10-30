@@ -1,9 +1,9 @@
 import {DiscordGatewayAdapterCreator, joinVoiceChannel} from "@discordjs/voice";
 import {EmbedBuilder, PermissionsBitField, type TextChannel} from "discord.js";
-import SlashCommand from "../src/SlashCommand.js";
-import MusicQueue from "../src/MusicQueue.js";
-import Playlist from "../src/Playlist.js";
-import {Song} from "../src/Song.js";
+import SlashCommand from "../src/slash-command.js";
+import MusicQueue from "../src/music-queue.js";
+import Playlist from "../src/playlist.js";
+import {Song} from "../src/song.js";
 
 export default new SlashCommand(
 	{

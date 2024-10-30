@@ -1,7 +1,7 @@
 import {EmbedBuilder} from "discord.js";
 import {createApi} from "unsplash-js";
 import packageJSON from "../package.json" with {type: "json"};
-import SlashCommand from "../src/SlashCommand.js";
+import SlashCommand from "../src/slash-command.js";
 
 const unsplash = createApi({
 	accessKey: process.env.UNSPLASH_ACCESS_KEY!,

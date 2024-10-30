@@ -1,9 +1,9 @@
 import {Client, GatewayIntentBits, REST, Routes, type Snowflake} from "discord.js";
-import MusicQueue from "./MusicQueue.js";
-import SlashCommand from "./SlashCommand.js";
+import MusicQueue from "./music-queue.js";
+import SlashCommand from "./slash-command.js";
 import {readdir} from "fs/promises";
-import MissingPermissionsError from "./MissingPermissionsError.js";
-import Console from "./Console.js";
+import MissingPermissionsError from "./permissions-error.js";
+import Console from "./console.js";
 
 class Bot extends Client {
 	public constructor() {

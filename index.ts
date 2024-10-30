@@ -1,5 +1,5 @@
 import packageJSON from "./package.json" with {type: "json"};
-import Bot from "./src/Bot.js";
+import Bot from "./src/bot.js";
 
 console.log("Starting bot...");
 new Bot().on("ready", client => {
