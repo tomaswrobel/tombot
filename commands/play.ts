@@ -1,13 +1,13 @@
 import {DiscordGatewayAdapterCreator, joinVoiceChannel} from "@discordjs/voice";
 import {PermissionsBitField, TextChannel} from "discord.js";
-import MusicQueue from "../src/MusicQueue";
-import {Song} from "../src/Song";
-import SlashCommand from "../src/SlashCommand";
+import MusicQueue from "../src/MusicQueue.js";
+import {Song} from "../src/Song.js";
+import SlashCommand from "../src/SlashCommand.js";
 import playlist from "./playlist";
 
 const playlistPattern = /^.*(list=)([^#\&\?]*).*/;
 
-export = new SlashCommand(
+export default new SlashCommand(
 	{
 		description: "Plays audio from YouTube",
 		permissions: [

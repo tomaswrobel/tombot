@@ -2,7 +2,7 @@
 
 > EvoBot is a Discord Music Bot built with TypeScript, discord.js & uses Command Handler from [discordjs.guide](https://discordjs.guide)
 
-> Tombot is a Discord bot built on top of EvoBot while fixing some issues. It also includes support for SFTP servers (like [SparkedHost](https://sparkedhost.com/))
+> Tombot is a Discord bot built on top of EvoBot while fixing some issues.
 
 ## Requirements
 
@@ -12,16 +12,15 @@
 4. [Unsplash](https://unsplash.com) API Access key
 5. MySQL enabled
 
-## 🚀 Getting Started (with SparkedHost)
+## 🚀 Getting Started
 
-First, clone the repo. Then, provide the Secrets:
+First, clone the repo. Then, provide these environment variables:
 
 1. `DISCORD_TOKEN` - being the Discord Bot Token
 2. `UNSPLASH_ACCESS_KEY` - being the Unsplash access key (not the secret one)
-3. `USERNAME`, `PASSWORD` - Your login info found in the panel
-4. `DB_USERNAME`, `DB_PASSWORD`, `DATABASE` - after creating a database
+3. `DB_USERNAME`, `DB_PASSWORD`, `DATABASE` - after creating a database
 
-Then commit and run!
+Then build with TypeScript.
 
 ## 📝 Features & Commands
 
@@ -72,9 +71,9 @@ Creating custom command is as fast as creating a file.
 Under the `commands` folder, create a TypeScript file with the same name as your command.
 
 ```ts
-import SlashCommand from "../src/SlashCommand";
+import SlashCommand from "../src/SlashCommand.js";
 
-export = new SlashCommand(
+export default new SlashCommand(
 	{
 		description: "Your description",
 	},

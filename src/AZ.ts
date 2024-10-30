@@ -9,7 +9,7 @@ import {
 	AnyThreadChannel,
 } from "discord.js";
 import sharp from "sharp";
-import Database from "./Database";
+import Database from "./Database.js";
 
 class AZHex {
 	public color: "orange" | "blue" | "black" | "white" = "white";

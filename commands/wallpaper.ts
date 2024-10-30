@@ -1,14 +1,14 @@
 import {EmbedBuilder} from "discord.js";
 import {createApi} from "unsplash-js";
-import {name} from "../package.json";
-import SlashCommand from "../src/SlashCommand";
+import packageJSON from "../package.json" with {type: "json"};
+import SlashCommand from "../src/SlashCommand.js";
 
 const unsplash = createApi({
 	accessKey: process.env.UNSPLASH_ACCESS_KEY!,
 });
 
 const params = new URLSearchParams({
-	utm_source: name,
+	utm_source: packageJSON.name,
 	utm_medium: "referral",
 });
 
@@ -40,7 +40,7 @@ async function getPhoto(query: string | null) {
 	}
 }
 
-export = new SlashCommand(
+export default new SlashCommand(
 	{
 		description: "Searches for a wallpaper",
 	},

@@ -6,8 +6,8 @@ import {
 	PermissionsBitField,
 	RepliableInteraction,
 } from "discord.js";
-import {Song} from "../src/Song";
-import SlashCommand from "../src/SlashCommand";
+import {Song} from "../src/Song.js";
+import SlashCommand from "../src/SlashCommand.js";
 
 function generateQueueEmbed(interaction: RepliableInteraction, songs: Song[]) {
 	const embeds: EmbedBuilder[] = [];
@@ -33,7 +33,7 @@ function generateQueueEmbed(interaction: RepliableInteraction, songs: Song[]) {
 	return embeds;
 }
 
-export = new SlashCommand(
+export default new SlashCommand(
 	{
 		cooldown: 5,
 		permissions: [PermissionsBitField.Flags.ManageMessages],

@@ -1,8 +1,8 @@
 import {PermissionsBitField} from "discord.js";
-import Database from "../src/Database";
-import SlashCommand from "../src/SlashCommand";
+import Database from "../src/Database.js";
+import SlashCommand from "../src/SlashCommand.js";
 
-export = new SlashCommand(
+export default new SlashCommand(
 	{
 		description: "Add points to a user.",
 		permissions: [PermissionsBitField.Flags.Administrator],

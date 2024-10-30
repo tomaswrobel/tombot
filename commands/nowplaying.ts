@@ -1,8 +1,8 @@
 import {EmbedBuilder} from "discord.js";
 import {splitBar} from "string-progressbar";
-import SlashCommand from "../src/SlashCommand";
+import SlashCommand from "../src/SlashCommand.js";
 
-export = new SlashCommand(
+export default new SlashCommand(
 	{
 		description: "Show now playing song",
 		cooldown: 10,

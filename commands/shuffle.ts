@@ -1,6 +1,6 @@
-import SlashCommand from "../src/SlashCommand";
+import SlashCommand from "../src/SlashCommand.js";
 
-export = new SlashCommand(
+export default new SlashCommand(
 	{
 		description: "Search and select videos to play",
 	},

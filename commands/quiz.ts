@@ -4,10 +4,10 @@ import {
 	StringSelectMenuBuilder,
 	StringSelectMenuOptionBuilder,
 } from "discord.js";
-import SlashCommand from "../src/SlashCommand";
-import Database from "../src/Database";
+import SlashCommand from "../src/SlashCommand.js";
+import Database from "../src/Database.js";
 
-export = new SlashCommand(
+export default new SlashCommand(
 	{
 		description: "Starts a quiz",
 	},

@@ -1,7 +1,7 @@
 import {PermissionsBitField, type TextChannel} from "discord.js";
-import SlashCommand from "../src/SlashCommand";
+import SlashCommand from "../src/SlashCommand.js";
 
-export = new SlashCommand(
+export default new SlashCommand(
 	{
 		permissions: [PermissionsBitField.Flags.ManageMessages],
 		cooldown: 3,

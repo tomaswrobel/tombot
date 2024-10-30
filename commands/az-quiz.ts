@@ -1,7 +1,7 @@
-import AZ from "../src/AZ";
-import SlashCommand from "../src/SlashCommand";
+import AZ from "../src/AZ.js";
+import SlashCommand from "../src/SlashCommand.js";
 
-export = new SlashCommand(
+export default new SlashCommand(
 	{description: "Starts an AZ quiz", cooldown: 10},
 	async function* (user) {
 		yield "Starting AZ quiz...";

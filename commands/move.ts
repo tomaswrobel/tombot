@@ -1,7 +1,7 @@
 import move from "array-move";
-import SlashCommand from "../src/SlashCommand";
+import SlashCommand from "../src/SlashCommand.js";
 
-export = new SlashCommand(
+export default new SlashCommand(
 	{
 		description: "Move songs around in the queue",
 	},

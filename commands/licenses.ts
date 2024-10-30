@@ -1,24 +1,22 @@
 import {EmbedBuilder} from "discord.js";
-import {dependencies, repository} from "../package.json";
-import SlashCommand from "../src/SlashCommand";
-import {join} from "path";
+import packageJSON from "../package.json" with {type: "json"};
+import SlashCommand from "../src/SlashCommand.js";
 
-const api = `https://api.github.com/repos${new URL(repository.url).pathname}`;
+const api = `https://api.github.com/repos${new URL(packageJSON.repository.url).pathname}`;
 
-export = new SlashCommand({description: "See open-source licenses"}, async function* () {
+export default new SlashCommand({description: "See open-source licenses"}, async function* () {
 	yield "Loading...";
 
 	const embed = new EmbedBuilder();
 
-	for (const name in dependencies) {
-		const {description} = require(join(__dirname, "..", "node_modules", name, "package.json"));
+	for (const name in packageJSON.dependencies) {
+		const {default: {description}} = await import(`${name}/package.json`, {with: {type: "json"}});
 
 		embed.addFields({
 			name,
 			value: `${description}\n[View on npm](https://npmjs.com/package/${name})`,
 		});
 	}
-
 
 	const {owner, description} = await fetch(api).then(res => res.json());
 
@@ -34,7 +32,7 @@ export = new SlashCommand({description: "See open-source licenses"}, async funct
 				.setAuthor({
 					name: owner.login,
 					iconURL: owner.avatar_url,
-					url: repository.url
+					url: packageJSON.repository.url,
 				})
 				.setDescription(description),
 		],

@@ -1,9 +1,7 @@
-import {version} from "./package.json";
-import {config} from "dotenv";
-import Bot from "./src/Bot";
+import packageJSON from "./package.json" with {type: "json"};
+import Bot from "./src/Bot.js";
 
-config();
 console.log("Starting bot...");
 new Bot().on("ready", client => {
-    console.log(`${client.user.username} v${version} ready!`);
-})
+    console.log(`${client.user.username} v${packageJSON.version} ready!`);
+});

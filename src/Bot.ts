@@ -1,10 +1,9 @@
 import {Client, GatewayIntentBits, REST, Routes, type Snowflake} from "discord.js";
-import MusicQueue from "./MusicQueue";
-import SlashCommand from "./SlashCommand";
+import MusicQueue from "./MusicQueue.js";
+import SlashCommand from "./SlashCommand.js";
 import {readdir} from "fs/promises";
-import {join} from "path";
-import MissingPermissionsError from "./MissingPermissionsError";
-import Console from "./Console";
+import MissingPermissionsError from "./MissingPermissionsError.js";
+import Console from "./Console.js";
 
 class Bot extends Client {
 	public constructor() {
@@ -95,8 +94,8 @@ class Bot extends Client {
 	private async registerSlashCommands() {
 		const rest = new REST({version: "9"}).setToken(process.env.DISCORD_TOKEN!);
 
-		for (const file of await readdir(join(__dirname, "..", "commands"))) {
-			const command: SlashCommand = require(join(__dirname, "..", "commands", file));
+		for (const file of await readdir("commands")) {
+			const command = await import(`../commands/${file}`).then<SlashCommand>(m => m.default);
 			const name = file.split(".")[0];
 
 			this.slashCommands.push(command.build(name));

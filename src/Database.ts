@@ -1,7 +1,7 @@
 import {createConnection} from "mysql";
 
 const connection = createConnection({
-	host: "db-eu-02.sparkedhost.us",
+	host: "db-sgp-02.sparkedhost.us",
 	user: process.env.DB_USERNAME,
 	password: process.env.DB_PASSWORD,
 	database: process.env.DATABASE,
