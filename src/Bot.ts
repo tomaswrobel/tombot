@@ -1,7 +1,6 @@
 import {Client, GatewayIntentBits, REST, Routes, type Snowflake} from "discord.js";
-import MusicQueue from "./music-queue.js";
 import SlashCommand from "./slash-command.js";
-import {readdir} from "fs/promises";
+import {readdir} from "node:fs/promises";
 import MissingPermissionsError from "./permissions-error.js";
 import Console from "./console.js";
 
@@ -19,7 +18,6 @@ class Bot extends Client {
 		});
 
 		this.commands = new Map();
-		this.queues = new Map();
 		this.cooldowns = new Map();
 		this.slashCommandsMap = new Map();
 		this.slashCommands = [];
@@ -114,7 +112,6 @@ declare module "discord.js" {
 		slashCommands: ApplicationCommandDataResolvable[];
 		slashCommandsMap: Map<string, SlashCommand>;
 		cooldowns: Map<string, Map<Snowflake, number>>;
-		queues: Map<Snowflake, MusicQueue>;
 	}
 }
 

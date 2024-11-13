@@ -13,7 +13,7 @@ export default new SlashCommand(
 		} else if (amount < 1) {
 			yield "You must delete at least 1 message";
 		} else {
-			yield `Deleting ${amount} messages...`;
+			yield SlashCommand.DEFER;
 			const channel = this.channel as TextChannel;
 			const messages = await channel.messages.fetch({limit: amount});
 			await channel.bulkDelete(messages);

@@ -1,6 +1,5 @@
 /*
  * This is a custom implementation of a slash command
- * It does not come from EvoBot
  *
  * It works perfectly with the TypeScript IntelliSense.
  * To simplify the reply, you can use Async Generators.
@@ -80,13 +79,13 @@ class SlashCommand<O extends SlashCommand.Options[] = []> {
 	public async run(interaction: RepliableInteraction, ...args: SlashCommand.ExtractParams<O>) {
 		for await (const message of this.fn.apply(interaction, args)) {
 			if (message === SlashCommand.DEFER) {
-				await interaction.deferReply().catch(console.error);
+				await interaction.deferReply();
 			} else if (message === SlashCommand.DELETE) {
-				await interaction.deleteReply().catch(console.error);
-			} else if (interaction.replied) {
-				await interaction.editReply(message).catch(console.error);
+				await interaction.deleteReply();
+			} else if (interaction.replied || interaction.deferred) {
+				await interaction.followUp(message);
 			} else {
-				await interaction.reply(message).catch(console.error);
+				await interaction.reply(message);
 			}
 		}
 	}
